@@ -1,0 +1,40 @@
+ID
+1
+
+Nazwa scenariusza
+Weryfikacja ceny w koszyku po dodaniu 2 produktów
+
+Cel testu
+Sprawdzenie, czy po dodaniu 2 sztuk tego samego produktu do koszyka system poprawnie oblicza łączną cenę 360 zł.
+
+Priorytet
+Wysoki
+
+Typ testu
+Funkcjonalny
+End-to-End (E2E)
+Automatyczny (Playwright)
+
+Środowisko testowe
+Środowisko testowe aplikacji webowej
+Przeglądarka: Chromium
+Platforma: Desktop
+
+Warunki wstępne
+1 Użytkownik nie jest zalogowany
+2 Koszyk jest pusty
+3 Produkt jest dostępny w ofercie
+
+Kroki testowe
+Krok	Akcja
+1	Otworzyć stronę szczegółów produktu
+2	Ustawić ilość produktu na 2
+3	Kliknąć przycisk „Dodaj do koszyka”
+4	Poczekać na komunikat potwierdzający dodanie produktu do koszyka
+5	Przejść do widoku koszyka
+6	Odczytać cenę łączną produktu w koszyku
+
+
+Oczekiwany rezultat końcowy
+✔ Cena w koszyku wynosi dokładnie 360 zł
+✔ Test przechodzi bez błędów
