@@ -1,0 +1,53 @@
+ID
+2
+
+Nazwa scenariusza
+Rezerwacja lotu Boston → Berlin i weryfikacja potwierdzenia zakupu
+
+Cel testu
+Sprawdzenie, czy użytkownik może wyszukać lot na trasie Boston → Berlin, wybrać dostępny lot, wypełnić formularz zakupu, sfinalizować transakcję oraz otrzymać potwierdzenie zakupu z poprawnym numerem potwierdzenia.
+
+Priorytet
+Wysoki
+
+Typ testu
+Funkcjonalny
+End-to-End (E2E)
+Automatyczny (Playwright)
+
+
+Środowisko testowe
+Środowisko testowe aplikacji webowej 
+Przeglądarka: Chromium
+Platforma: Desktop
+
+
+Warunki wstępne
+1 Aplikacja jest dostępna online
+2 Użytkownik ma dostęp do internetu
+3 Na trasie Boston → Berlin dostępny jest co najmniej 1 lot
+4 Strona zakupu umożliwia wypełnienie formularza i finalizację zakupu
+
+Kroki testowe
+Krok	Akcja
+1	Otworzyć stronę główną serwisu rezerwacji lotów
+2	Zweryfikować, że tytuł strony to „BlazeDemo”
+3	W polu „From” wybrać Boston
+4	W polu „To” wybrać Berlin
+5	Kliknąć przycisk „Find Flights”
+6	Zweryfikować, że użytkownik został przeniesiony na stronę rezerwacji lotów (/reserve.php)
+7	Zweryfikować, że nagłówek zawiera tekst „Flights from Boston to Berlin”
+8	Sprawdzić, że lista lotów zawiera co najmniej 1 pozycję
+9	Wybrać pierwszy dostępny lot
+10	Zweryfikować, że użytkownik został przeniesiony na stronę zakupu (/purchase.php)
+11	Wypełnić formularz danymi pasażera: imię i nazwisko, adres, miasto, województwo/stan, kod pocztowy, numer karty, miesiąc, rok, nazwisko na karcie
+12	(Opcjonalnie) Zaznaczyć checkbox „Remember me”, jeśli jest dostępny
+13	Kliknąć przycisk zakupu (Submit)
+14	Zweryfikować, że wyświetla się potwierdzenie zakupu z nagłówkiem „Thank you for your purchase”
+15	Odczytać numer potwierdzenia z tabeli wyników i sprawdzić, że składa się wyłącznie z cyfr
+
+
+Oczekiwany rezultat końcowy
+✔ Użytkownik widzi komunikat „Thank you for your purchase” po zakupie
+✔ Numer potwierdzenia zakupu jest poprawny i zawiera tylko cyfry (np. spełnia format ^\d+$)
+✔ Test przechodzi bez błędów
